@@ -24,6 +24,5 @@ public class ExampleMax : Example
         });
 
         DrawImage();
-        Dispose();
     }
 }

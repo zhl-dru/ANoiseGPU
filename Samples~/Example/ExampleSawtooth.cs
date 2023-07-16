@@ -33,6 +33,5 @@ public class ExampleSawtooth : Example
         });
 
         DrawImage();
-        Dispose();
     }
 }

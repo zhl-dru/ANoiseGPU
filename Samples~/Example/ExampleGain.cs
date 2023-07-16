@@ -32,6 +32,5 @@ public class ExampleGain : Example
         });
 
         DrawImage();
-        Dispose();
     }
 }

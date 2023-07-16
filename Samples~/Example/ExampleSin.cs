@@ -30,6 +30,5 @@ public class ExampleSin : Example
         });
 
         DrawImage();
-        Dispose();
     }
 }

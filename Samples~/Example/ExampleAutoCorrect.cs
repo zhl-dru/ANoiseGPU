@@ -29,6 +29,5 @@ public class ExampleAutoCorrect : Example
         });
 
         DrawImage();
-        Dispose();
     }
 }

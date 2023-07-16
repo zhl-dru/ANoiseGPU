@@ -39,6 +39,5 @@ public class ExampleFunctionGradient : Example
         });
 
         DrawImage();
-        Dispose();
     }
 }

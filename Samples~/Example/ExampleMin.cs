@@ -24,6 +24,5 @@ public class ExampleMin : Example
         });
 
         DrawImage();
-        Dispose();
     }
 }

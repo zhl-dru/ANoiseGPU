@@ -35,6 +35,5 @@ public class ExampleTriangle : Example
         });
 
         DrawImage();
-        Dispose();
     }
 }

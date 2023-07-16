@@ -35,6 +35,5 @@ public class ExampleBlend : Example
         });
 
         DrawImage();
-        Dispose();
     }
 }

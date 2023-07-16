@@ -62,6 +62,5 @@ public class ExampleSelect : Example
         });
 
         DrawImage();
-        Dispose();
     }
 }

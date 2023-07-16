@@ -33,6 +33,5 @@ public class ExampleClamp : Example
         });
 
         DrawImage();
-        Dispose();
     }
 }

@@ -34,6 +34,5 @@ public class ExampleRotateDomain : Example
         });
 
         DrawImage();
-        Dispose();
     }
 }

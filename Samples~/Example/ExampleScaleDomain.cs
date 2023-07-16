@@ -37,6 +37,5 @@ public class ExampleScaleDomain : Example
         });
 
         DrawImage();
-        Dispose();
     }
 }

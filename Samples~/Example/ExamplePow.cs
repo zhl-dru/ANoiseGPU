@@ -33,6 +33,5 @@ public class ExamplePow : Example
         });
 
         DrawImage();
-        Dispose();
     }
 }

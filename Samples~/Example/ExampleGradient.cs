@@ -22,6 +22,5 @@ public class ExampleGradient : Example
         });
 
         DrawImage();
-        Dispose();
     }
 }

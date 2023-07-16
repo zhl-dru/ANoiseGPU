@@ -24,6 +24,5 @@ public class ExampleSphere : Example
         });
 
         DrawImage();
-        Dispose();
     }
 }

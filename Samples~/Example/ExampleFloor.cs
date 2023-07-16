@@ -38,6 +38,5 @@ public class ExampleFloor : Example
         });
 
         DrawImage();
-        Dispose();
     }
 }

@@ -32,6 +32,5 @@ public class ExampleNormalizeCoords : Example
         });
 
         DrawImage();
-        Dispose();
     }
 }

@@ -54,6 +54,5 @@ public class ExampleSimpleOperation : Example
         });
 
         DrawImage();
-        Dispose();
     }
 }

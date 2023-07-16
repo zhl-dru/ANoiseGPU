@@ -36,6 +36,5 @@ public class ExampleTranslateDomain : Example
         });
 
         DrawImage();
-        Dispose();
     }
 }

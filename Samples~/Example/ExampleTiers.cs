@@ -35,6 +35,5 @@ public class ExampleTiers : Example
         });
 
         DrawImage();
-        Dispose();
     }
 }

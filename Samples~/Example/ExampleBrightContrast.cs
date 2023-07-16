@@ -36,6 +36,5 @@ public class ExampleBrightContrast : Example
         });
 
         DrawImage();
-        Dispose();
     }
 }

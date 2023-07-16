@@ -17,6 +17,5 @@ public class ExampleConstant : Example
         });
 
         DrawImage();
-        Dispose();
     }
 }

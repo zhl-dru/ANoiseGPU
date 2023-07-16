@@ -1,9 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 using Unity.Collections;
-using Unity.Mathematics;
-using Unity.Jobs;
-using Unity.Burst;
 using ANoiseGPU;
 using System.Diagnostics;
 using System;
@@ -38,14 +35,6 @@ public class Example : MonoBehaviour
     protected void DrawImage()
     {
         Texture2D texture = new Texture2D(Width, Width);
-        //var pixelData = texture.GetPixelData<Color32>(0);
-
-        //for (var i = 0; i < pixelData.Length; i++)
-        //{
-        //    float v = values[i];
-        //    Color c = new Color(v, v, v);
-        //    pixelData[i] = (Color32)c;
-        //}
         for (int y = 0, i = 0; y < Width; y++)
         {
             for (int x = 0; x < Width; x++, i++)
@@ -65,11 +54,6 @@ public class Example : MonoBehaviour
         action.Invoke();
         stopwatch.Stop();
         UnityEngine.Debug.Log(string.Format("{0}สนำรมห{1}ms", GetType().Name, stopwatch.Elapsed.TotalMilliseconds / 10));
-    }
-
-    protected void Dispose()
-    {
-
     }
 }
 

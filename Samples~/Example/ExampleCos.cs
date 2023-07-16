@@ -30,6 +30,5 @@ public class ExampleCos : Example
         });
 
         DrawImage();
-        Dispose();
     }
 }
