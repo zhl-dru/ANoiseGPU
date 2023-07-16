@@ -21,6 +21,20 @@ GPU非常适合大批量可并行的计算任务，将计算转移到GPU实现�
 
 需要注意的是，很难确定GPU实际的计算用时，以上的用时包括了计算和将数据取回CPU的时间，由于取回数据的速度相对较慢，在大规模的采样中回读数据的时间可能超过计算用时，如果直接在GPU中使用计算结果，可以进一步提升性能。
 
+## 安装
+
+- 下载或克隆此存储库复制到您的项目文件夹中
+
+- 在`Package Manager`中选择`Add Package form git URL`，使用以下链接
+
+  ```
+  https://github.com/zhl-dru/ANoiseGPU.git
+  ```
+
+## 依赖项
+
+- `com.unity.mathematics` 1.2.6+
+
 ## 注意事项
 
 - ANoiseGPU起初是我为特定目的创建的，为了避免不必要的数据传输，采样坐标的计算也转移到计算着色器中，坐标计算定义在`Runtime/Shaders/Kernels/Coord/KCoord.hlsl`和`Runtime/Shaders/Utils/Coord.hlsl`内，2D，3D，4D方法均是从2D坐标展开的，没有非常方便的办法修改这些方法，除了改写这些之外，还必须更改`Runtime/Model/Base/MBase.cs`中与`GPUResolutionData`有关的部分。
