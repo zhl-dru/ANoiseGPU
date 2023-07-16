@@ -1,0 +1,164 @@
+#pragma kernel KOriginCoordMain2D
+#pragma kernel KOriginCoordMain3D
+#pragma kernel KOriginCoordMain4D
+
+
+#pragma kernel KAddMain
+//KAutoCorrect
+#pragma kernel KAutoCorrectMain2D
+#pragma kernel KAutoCorrectMain3D
+#pragma kernel KAutoCorrectMain4D
+
+#pragma kernel KBiasMain
+#pragma kernel KBlendMain
+#pragma kernel KBrightContrastMain
+
+#pragma kernel KClampMain
+#pragma kernel KConstantMain
+#pragma kernel KCosMain
+#pragma kernel KDivMain
+#pragma kernel KFloorMain
+//KFractal
+#pragma kernel KFractalMain2D
+#pragma kernel KFractalMain3D
+#pragma kernel KFractalMain4D
+//KFunctionGradient
+#pragma kernel KFunctionGradientMain
+#pragma kernel KGradientCoordMinusMain2D
+#pragma kernel KGradientCoordMinusMain3D
+#pragma kernel KGradientCoordMinusMain4D
+#pragma kernel KGradientCoordPlusMain2D
+#pragma kernel KGradientCoordPlusMain3D
+#pragma kernel KGradientCoordPlusMain4D
+
+#pragma kernel KGainMain
+//KGradient
+#pragma kernel KGradientMain2D
+#pragma kernel KGradientMain3D
+#pragma kernel KGradientMain4D
+//KMagnitude
+#pragma kernel KMagnitudeMain2D
+#pragma kernel KMagnitudeMain3D
+#pragma kernel KMagnitudeMain4D
+
+#pragma kernel KMaxMain
+#pragma kernel KMinMain
+#pragma kernel KMultMain
+//KNormalizeCoords
+#pragma kernel KNormalizeCoordsMain
+#pragma kernel KNormalizeCoordsMain2D
+#pragma kernel KNormalizeCoordsMain3D
+#pragma kernel KNormalizeCoordsMain4D
+
+#pragma kernel KPowMain
+//KRotateDomain
+#pragma kernel KRotateDomainMain
+#pragma kernel KRotateDomainCoordMain2D
+#pragma kernel KRotateDomainCoordMain3D
+#pragma kernel KRotateDomainCoordMain4D
+
+#pragma kernel KSawtoothMain
+//KScaleDomain
+#pragma kernel KScaleDomainMain
+#pragma kernel KScaleDomainCoordMain2D
+#pragma kernel KScaleDomainCoordMain3D
+#pragma kernel KScaleDomainCoordMain4D
+
+#pragma kernel KScaleOffsetMain
+#pragma kernel KSelectMain
+#pragma kernel KSinMain
+//KSphere
+#pragma kernel KSphereMain2D
+#pragma kernel KSphereMain3D
+#pragma kernel KSphereMain4D
+
+#pragma kernel KSubMain
+#pragma kernel KTiersMain
+//KTranslateDomain
+#pragma kernel KTranslateDomainMain
+#pragma kernel KTranslateDomainCoordMain2D
+#pragma kernel KTranslateDomainCoordMain3D
+#pragma kernel KTranslateDomainCoordMain4D
+
+#pragma kernel KTriangleMain
+
+
+#define TN 16
+
+uint resolution;
+float2 start;
+float stepsize;
+
+RWStructuredBuffer<float2> Coord2Buffer;
+RWStructuredBuffer<float3> Coord3Buffer;
+RWStructuredBuffer<float4> Coord4Buffer;
+
+RWStructuredBuffer<float2> DomainCoord2Buffer;
+RWStructuredBuffer<float3> DomainCoord3Buffer;
+RWStructuredBuffer<float4> DomainCoord4Buffer;
+
+StructuredBuffer<float> InputBuffer0;
+StructuredBuffer<float> InputBuffer1;
+StructuredBuffer<float> InputBuffer2;
+StructuredBuffer<float> InputBuffer3;
+StructuredBuffer<float> InputBuffer4;
+StructuredBuffer<float> InputBuffer5;
+StructuredBuffer<float> InputBuffer6;
+StructuredBuffer<float> InputBuffer7;
+StructuredBuffer<float> InputBuffer8;
+StructuredBuffer<float> InputBuffer9;
+
+
+
+//Common
+#include "Common/glsl-translations.hlsl"
+#include "Common/stegu-math.hlsl"
+//Utils
+#include "Utils/Coord.hlsl"
+#include "Utils/Math.hlsl"
+//Noise
+#include "Noise/NConstant.hlsl"
+#include "Noise/Perlin2D.hlsl"
+#include "Noise/Perlin3D.hlsl"
+#include "Noise/Perlin4D.hlsl"
+#include "Noise/Simplex2D.hlsl"
+#include "Noise/Simplex3D.hlsl"
+#include "Noise/Simplex4D.hlsl"
+#include "Noise/Noise.hlsl"
+#include "Noise/Fractal/FBM.hlsl"
+#include "Noise/Fractal/Billowy.hlsl"
+#include "Noise/Fractal/Ridged.hlsl"
+//Coord
+#include "Kernels/Coord/KCoord.hlsl"
+//Kernels
+#include "Kernels/KAdd.hlsl"
+#include "Kernels/KAutoCorrect.hlsl"
+#include "Kernels/KBias.hlsl"
+#include "Kernels/KBlend.hlsl"
+#include "Kernels/KBrightContrast.hlsl"
+#include "Kernels/KClamp.hlsl"
+#include "Kernels/KConstant.hlsl"
+#include "Kernels/KCos.hlsl"
+#include "Kernels/KDiv.hlsl"
+#include "Kernels/KFloor.hlsl"
+#include "Kernels/KFractal.hlsl"
+#include "Kernels/KFunctionGradient.hlsl"
+#include "Kernels/KGain.hlsl"
+#include "Kernels/KGradient.hlsl"
+#include "Kernels/KMagnitude.hlsl"
+#include "Kernels/KMax.hlsl"
+#include "Kernels/KMin.hlsl"
+#include "Kernels/KMult.hlsl"
+#include "Kernels/KNormalizeCoords.hlsl"
+#include "Kernels/KPow.hlsl"
+#include "Kernels/KRotateDomain.hlsl"
+#include "Kernels/KSawtooth.hlsl"
+#include "Kernels/KScaleDomain.hlsl"
+#include "Kernels/KScaleOffset.hlsl"
+#include "Kernels/KSelect.hlsl"
+#include "Kernels/KSin.hlsl"
+#include "Kernels/KSphere.hlsl"
+#include "Kernels/KSub.hlsl"
+#include "Kernels/KTiers.hlsl"
+#include "Kernels/KTranslateDomain.hlsl"
+#include "Kernels/KTriangle.hlsl"

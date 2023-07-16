@@ -1,0 +1,12 @@
+{
+  "name": "com.dru.anoisegpu",
+  "version": "1.0.0",
+  "displayName": "ANoiseGPU",
+  "samples": [
+    {
+      "displayName": "Example",
+      "description": "Example.",
+      "path": "Samples~/Example"
+    }
+  ]
+}

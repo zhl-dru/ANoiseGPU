@@ -1,0 +1,13 @@
+RWStructuredBuffer<float> KMinOutputBuffer;
+
+[numthreads(TN, TN, 1)]
+void KMinMain(uint3 id : SV_DispatchThreadID)
+{
+	if (id.x > resolution || id.y > resolution)return;
+	int index = id.x + id.y * resolution;
+
+	float s1 = InputBuffer0[index];
+	float s2 = InputBuffer1[index];
+
+	KMinOutputBuffer[index] = s1 > s2 ? s2 : s1;
+}
