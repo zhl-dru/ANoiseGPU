@@ -53,7 +53,7 @@ public class Example : MonoBehaviour
         stopwatch.Restart();
         action.Invoke();
         stopwatch.Stop();
-        UnityEngine.Debug.Log(string.Format("{0}使用了{1}ms", GetType().Name, stopwatch.Elapsed.TotalMilliseconds / 10));
+        UnityEngine.Debug.Log(string.Format("{0}使用了{1}ms", GetType().Name, stopwatch.Elapsed.TotalMilliseconds));
     }
 }
 
